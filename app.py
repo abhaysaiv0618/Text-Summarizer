@@ -1,8 +1,5 @@
-from cgitb import text
-import json, sys
-from tokenize import Number
-from flask import request
-from flask import Flask, render_template
+import json
+from flask import request, Flask, render_template
 from backend import summarize
 
 app = Flask(__name__)
