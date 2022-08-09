@@ -14,7 +14,6 @@ def summarize(text, len, lang):
     wordMap = dict()
     sentenceMap = dict()
 
-    #List of words and the number of times of their appearence
     for word in wordToken:
         word = word.lower()
         if word not in filler and word not in punctuation:
@@ -26,7 +25,6 @@ def summarize(text, len, lang):
     for word in wordMap:
         wordMap[word] = wordMap[word]/max(wordMap.values())
 
-    #Create rankings for each sentence
     for sentence in sentenceToken:
         for word in wordMap:
             if word in sentence.lower():
@@ -36,7 +34,6 @@ def summarize(text, len, lang):
                     sentenceMap[sentence] = wordMap[word]
 
     sentencesNeeded = nlargest(len, sentenceMap, key = sentenceMap.get)
-    # print(sentencesNeeded)
 
     summary =""
     for sentence in sentencesNeeded:
