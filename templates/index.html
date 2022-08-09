@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/style.css') }}"
+    />
+    <title>Text Summarizer - Abhaysai Vemula</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <a
+        class="nav-item"
+        target="_blank"
+        href="https://abhaysaiv0618.github.io/Personal-Website/"
+        >Personal Website</a
+      >
+      <a
+        class="nav-item"
+        target="_blank"
+        href="https://drive.google.com/file/d/1ZwEXxST4paXFWGCQ3mJkLuzGbu96gALJ/view"
+        >Resume</a
+      >
+      <a
+        class="nav-item"
+        target="_blank"
+        href="https://www.linkedin.com/in/abhaysaivemula"
+        >LinkedIn</a
+      >
+      <a
+        class="nav-item"
+        target="_blank"
+        href="https://github.com/abhaysaiv0618/"
+        >Github</a
+      >
+    </div>
+    <h1>Welcome to Abhaysai's Text Summarizer</h1>
+    <section class="heading-section">
+      <h3>Purpose & Overview:</h3>
+      <p>
+        The purpose of this project was to familiarize myself with utilizing
+        python's NLTK library, understand and develop API's, and learn how to
+        communicate between client-side and server-side. In this project users
+        will be able to input a piece of text and recieve an extractive summary
+        with the amount of sentences they requested:
+        <a href="">Source Code</a>.
+      </p>
+      <h3>Pitfalls:</h3>
+      <p>
+        The summarization method used is extractive summarization. This entails
+        generating a rank for each sentence and returning the top
+        <i>n</i> ranked sentences. Pitfalls of this include some loss of
+        information as the summarization method is not abstractive.
+      </p>
+      <hr />
+      <button class="start">Start Summarizing</button>
+    </section>
+
+    <section class="choose-language hidden">
+      <h3>Choose your Language</h3>
+      <div>
+        <button class="English">English 🏴󠁧󠁢󠁥󠁮󠁧󠁿</button>
+        <button class="Spanish">Spanish 🇪🇸</button>
+        <button class="French">French 🇫🇷</button>
+        <button class="German">German 🇩🇪</button>
+        <button class="Italian">Italian 🇮🇹</button>
+      </div>
+    </section>
+
+    <div class="input-text hidden">
+      <input id="input-text-box" type="text" placeholder="Insert Text Here" />
+      <br />
+      <input
+        id="input-length-box"
+        type="text"
+        placeholder="Insert Length Here"
+      />
+      <br />
+      <button id="btn-summarize">Summarize</button>
+    </div>
+    <div class="the-summary hidden">
+      <h3>Summary:</h3>
+      <p id="p1" class="text-summary">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+        voluptate repudiandae error tenetur quaerat soluta. Deserunt est dolor
+        laboriosam laudantium magni amet corporis provident, fugit sint adipisci
+        laborum iste repellat earum culpa, magnam doloribus id, dolores aliquam.
+        Voluptatem deleniti eveniet rerum nobis quis pariatur illo labore
+        officia officiis quod. Omnis!
+      </p>
+    </div>
+    <button id="try-again" class="hidden">Try Again!</button>
+    <!-- <div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div> -->
+    <section class="choose-language hidden">
+      <h3>Choose your Language</h3>
+      <div>
+        <button class="English">English 🏴󠁧󠁢󠁥󠁮󠁧󠁿</button>
+        <button class="Spanish">Spanish 🇪🇸</button>
+        <!-- <button class="French">French 🇫🇷</button>
+          <button class="German">German 🇩🇪</button>
+          <button class="Italian">Italian 🇮🇹</button> -->
+      </div>
+    </section>
+  </body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+  <script>
+    const text = document.querySelector(".text-summary");
+  </script>
+</html>
